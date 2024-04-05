@@ -11,10 +11,10 @@
 ## First steps
 0. This guide is part of the [bwCloud tutorial](https://www.bw-cloud.org/en/bwcloud_scope/use).
 1. Clone this repo.
-   `git clone TODO`
+   `git clone https://github.com/bwCloud/ansible-template.git`
 2. Rename and enter the template.
    `mv ansible-template myAnsible & cd myAnsible`
-2. Set your secret password in `./ansible.pass`. Create that file.
+2. Set your secret password in `./ansible.pass`.
 3. Replace the TODOs in `./inventories/hosts.ini` with the data for `vm01`.
 4. Replace the TODOs in `./inventories/host_vars/vm01/host.yml`
 5. Test the setup.
