@@ -1,0 +1,9 @@
+---
+# Variables for the 'openstack_client' role
+openstack_client:
+  # OpenStack credentials
+  auth_url: TODO
+  region_name: TODO
+  app_cred_id: TODO
+  app_cred_sec: TODO
+

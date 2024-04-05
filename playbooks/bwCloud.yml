@@ -1,0 +1,13 @@
+---
+# Apply the roles on all VMs in the group 'bwCloud'.
+- hosts: bwCloud
+  tags: [all]
+  roles:
+    # Associate the role 'XY' with the tag 'XY'
+    - { role: network, tags: [network] }
+    - { role: apt, tags: [apt] }
+    - { role: basics, tags: [basics] }
+    - { role: shell, tags: [shell] }
+    - { role: python_env, tags: [python_env] }
+    - { role: openstack_client, tags: [openstack_client] }
+

@@ -1,0 +1,10 @@
+---
+shell:
+  # Refer for each host, the defined information
+  user_home: "{{ host.user.home }}"
+  user_group: "{{ host.user.group }}"
+  user_owner: "{{ host.user.name }}"
+
+  # Python environment
+  pyenv: "{{ python_env.path }}/{{ python_env.name }}"
+

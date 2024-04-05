@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export OS_AUTH_TYPE=v3applicationcredential
+export OS_AUTH_URL="{{ openstack_client.auth_url }}"
+export OS_IDENTITY_API_VERSION=3
+export OS_REGION_NAME="{{ openstack_client.region_name }}"
+export OS_INTERFACE=public
+export OS_APPLICATION_CREDENTIAL_ID="{{ openstack_client.app_cred_id }}"
+export OS_APPLICATION_CREDENTIAL_SECRET="{{ openstack_client.app_cred_sec }}"
+

@@ -1,0 +1,16 @@
+---
+- name: "basics | install packages via package"
+  package:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('present') }}"
+  with_items:
+    - { name: 'tmux' }
+    - { name: 'htop' }
+    - { name: 'git' }
+    - { name: 'tig' }
+    - { name: 'zip' }
+    - { name: 'make' }
+    - { name: 'cron' }
+    - { name: 'man' }
+    - { name: 'vim' }
+

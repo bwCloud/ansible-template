@@ -1,0 +1,10 @@
+# some ls aliases
+alias ls='ls --color=auto --group-directories-first'
+alias ll='ls -l'
+alias la='ls -lA'
+alias l='ls -CF'
+
+
+# Call python executables
+[[ -d {{ shell.pyenv }} ]] && PATH=${PATH}:{{ shell.pyenv }}/bin
+

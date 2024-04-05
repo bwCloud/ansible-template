@@ -1,0 +1,6 @@
+---
+- include_tasks: configure.yml
+  args:
+    apply:
+      become: yes
+

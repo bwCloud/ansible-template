@@ -1,0 +1,13 @@
+---
+- name: "network | Copy network template files"
+  template:
+    src: "etc/{{ item.src }}"
+    dest: "/etc/{{ item.dest }}"
+    group: "{{ item.group | default('root') }}"
+    owner: "{{ item.owner | default('root') }}"
+    mode: "{{ item.mode | default('400') }}"
+  with_items:
+    - { src: "./hosts.j2",
+        dest: "./hosts"
+      }
+

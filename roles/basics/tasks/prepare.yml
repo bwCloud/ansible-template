@@ -1,0 +1,11 @@
+---
+- name: "basics | Create scripts folder"
+  file:
+    path: "{{ item.path }}"
+    state: "{{ item.state | default('directory') }}"
+    group: "{{ item.group | default(basics.user_group) }}"
+    owner: "{{ item.owner | default(basics.user_owner) }}"
+    mode: "{{ item.mode | default('750') }}"
+  with_items:
+    - { path: "{{ basics.user_home }}/.local/bin" }
+

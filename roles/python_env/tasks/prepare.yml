@@ -1,0 +1,19 @@
+---
+- name: "python_env | Create environment folder"
+  file:
+    path: "{{ item.path }}"
+    state: "{{ item.state | default('directory') }}"
+    group: "{{ item.group | default(python_env.user_group) }}"
+    owner: "{{ item.owner | default(python_env.user_owner) }}"
+    mode: "{{ item.mode | default('0770') }}"
+  with_items:
+    - { path: "{{ python_env.path }}" }
+
+
+- name: "python_env | Create environment via pip"
+  pip:
+    name: "{{ item.name }}"
+    virtualenv: "{{ python_env.path }}/{{ python_env.name }}"
+  with_items:
+    - { name: 'wheel' }  # Dummy value
+

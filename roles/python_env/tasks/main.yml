@@ -1,0 +1,8 @@
+---
+# Load other tasks
+- include_tasks: install.yml
+  args:
+    apply:
+      become: yes
+- include_tasks: prepare.yml
+

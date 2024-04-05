@@ -1,0 +1,15 @@
+---
+host:
+  user:
+    # Debian image based values
+    home: /home/debian
+    group: debian
+    name: debian
+    # home: /root
+    # group: root
+    # name: root
+
+  uuid: TODO
+  region: TODO # fr, ma, ul, ka
+  domain_suffix: bw-cloud-instance.org
+

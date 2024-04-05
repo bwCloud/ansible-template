@@ -1,0 +1,15 @@
+---
+# Variables for the 'network' role
+network:
+  # Refer for each host, the defined information
+  user_home: "{{ host.user.home }}"
+  user_group: "{{ host.user.group }}"
+  user_owner: "{{ host.user.name }}"
+
+  # List for known host resolvements
+  entries:
+    - ip: "127.0.0.1"
+      dn: "{{ host.uuid }}.{{ host.region }}.{{ host.domain_suffix }}"
+    - ip: "127.0.0.1"
+      dn: "vm01"
+

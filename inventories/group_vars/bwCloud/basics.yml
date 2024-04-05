@@ -1,0 +1,8 @@
+---
+# Variables for the 'basics' role
+basics:
+  # Refer for each host, the defined information
+  user_home: "{{ host.user.home }}"
+  user_group: "{{ host.user.group }}"
+  user_owner: "{{ host.user.name }}"
+

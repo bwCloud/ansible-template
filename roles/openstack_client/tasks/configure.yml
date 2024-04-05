@@ -1,0 +1,13 @@
+---
+- name: "openstack_client | Copy creds template files"
+  template:
+    src: "home/user/{{ item.src }}"
+    dest: "{{ openstack_client.user_home }}/{{ item.dest }}"
+    group: "{{ item.group | default(openstack_client.user_group) }}"
+    owner: "{{ item.owner | default(openstack_client.user_owner) }}"
+    mode: "{{ item.mode | default('400') }}"
+  with_items:
+    - { src: "./os_creds.sh.j2",
+        dest: "./.os_creds.sh"
+      }
+

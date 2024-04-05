@@ -1,0 +1,5 @@
+---
+- name: "apt | update apt cache"
+  apt:
+    update_cache: true
+

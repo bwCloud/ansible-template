@@ -1,0 +1,8 @@
+---
+- name: "python_env | Install python_env via package"
+  package:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('present') }}"
+  with_items:
+    - { name: 'python3-virtualenv' }
+

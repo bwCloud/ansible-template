@@ -1,0 +1,13 @@
+---
+- name: "shell | Copy bash template files"
+  template:
+    src: "home/user/{{ item.src }}"
+    dest: "{{ shell.user_home }}/{{ item.dest }}"
+    group: "{{ item.group | default(shell.user_group) }}"
+    owner: "{{ item.owner | default(shell.user_owner) }}"
+    mode: "{{ item.mode | default('400') }}"
+  with_items:
+    - { src: "./bash_aliases.j2",
+        dest: "./.bash_aliases"
+      }
+

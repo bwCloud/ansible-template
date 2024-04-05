@@ -1,0 +1,6 @@
+---
+- include_tasks: update.yml
+  args:
+    apply:
+      become: yes
+

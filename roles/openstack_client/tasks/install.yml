@@ -1,0 +1,8 @@
+---
+- name: "openstack_client | Install openstack via pip"
+  pip:
+    name: "{{ item.name }}"
+    virtualenv: "{{ openstack_client.pyenv }}"
+  with_items:
+    - { name: 'python-openstackclient' }
+

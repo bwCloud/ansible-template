@@ -1,0 +1,12 @@
+---
+# Variables for the 'python_env' role
+python_env:
+  # Refer for each host, the defined information
+  user_home: "{{ host.user.home }}"
+  user_group: "{{ host.user.group }}"
+  user_owner: "{{ host.user.name }}"
+
+  # Refer for each host, the defined information
+  path: "{{ host.user.home }}/pyenv"
+  name: "main"
+

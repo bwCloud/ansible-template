@@ -1,0 +1,12 @@
+---
+# Variables for the 'openstack_client' role
+# This file should be encrypted!
+openstack_client:
+  # Refer for each host, the defined information
+  user_home: "{{ host.user.home }}"
+  user_group: "{{ host.user.group }}"
+  user_owner: "{{ host.user.name }}"
+
+  # Use existing python environment
+  pyenv: "{{ python_env.path }}/{{ python_env.name }}"
+
