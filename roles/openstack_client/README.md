@@ -1,8 +1,13 @@
 # openstack_client
 
-* Install openstack client.
+### Role description
 
+* Install the python openstack client into the defined virtual environment.
+* The executable is accessable from via path.
+* The application credential is copied to the target.
 
-### Usage
-Run `source ~/.os_creds.sh && openstack server list`
+### Variables
+
+* `./inventories/group_vars/<GROUP>/openstack_client.yml`
+* `./inventories/group_vars/<GROUP>/openstack_client_creds.yml`
 

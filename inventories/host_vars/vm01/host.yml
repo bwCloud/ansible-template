@@ -9,6 +9,9 @@ host:
     # group: root
     # name: root
 
+  # You can get this information from your Dashboard.
+  # Take a look at the 'bwCloud Hostname'.
+  # https://portal.bw-cloud.org/project/instances/
   uuid: TODO
   region: TODO # fr, ma, ul, ka
   domain_suffix: bw-cloud-instance.org
