@@ -4,8 +4,8 @@
   tags: [all]
   roles:
     # Associate the role 'XY' with the tag 'XY'
-    - { role: network, tags: [network] }
     - { role: apt, tags: [apt] }
+    - { role: network, tags: [network] }
     - { role: basics, tags: [basics] }
     - { role: shell, tags: [shell] }
     - { role: python_env, tags: [python_env] }
