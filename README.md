@@ -19,6 +19,7 @@ Let's use this Ansible setup to demonstrate, how to customize a bwCloud instance
 2. Rename and enter the template.
    `mv ansible-template myAnsible & cd myAnsible`
 3. Set your secret password in `./ansible.pass`.
+   You can create a new one with: `openssl rand -hex 16`
 4. Replace the TODOs in `./inventories/hosts.ini` with the data for `vm01`.
 5. Replace the TODOs in `./inventories/host_vars/vm01/host.yml`.
    See below for more information about the file structure.
