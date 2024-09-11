@@ -7,21 +7,23 @@ Let's use this Ansible setup to demonstrate, how to customize a bwCloud instance
 
 - A created, running and accessible VM in the bwCloud, e. g. `vm01`.
   The image of this machine is a 'Debian' version.
-  Assume the private SSH-Keyfile is `~/.ssh/my_key`.
+  Assume the private SSH-Key file is `~/.ssh/my_key`.
 - A local installation of [Ansible](https://docs.ansible.com/ansible/latest/getting_started/index.html).
 
 
 ## First steps
 
 0. This guide is part of the [bwCloud tutorial](https://www.bw-cloud.org/en/bwcloud_scope/use).
-1. Clone this repo.
+1. Clone this repo onto your local machine.
    `git clone https://github.com/bwCloud/ansible-template.git`
 2. Rename and enter the template.
    `mv ansible-template myAnsible & cd myAnsible`
-2. Set your secret password in `./ansible.pass`.
-3. Replace the TODOs in `./inventories/hosts.ini` with the data for `vm01`.
-4. Replace the TODOs in `./inventories/host_vars/vm01/host.yml`
-5. Test the setup.
+3. Set your secret password in `./ansible.pass`.
+   You can create a new one with: `openssl rand -hex 16`
+4. Replace the TODOs in `./inventories/hosts.ini` with the data for `vm01`.
+5. Replace the TODOs in `./inventories/host_vars/vm01/host.yml`.
+   See below for more information about the file structure.
+6. Test the setup.
    `make test`
 6. Read the rest of this document.
 
@@ -44,12 +46,12 @@ We quickly prepared our instance `vm01` for further usage.
 
 - By using root privileges, the `virtuelenv` package was installed.
   Some other useful packages had been installed.
-  Take a lock into `./roles/basics/tasks/install.yml`.
+  Take a look into `./roles/basics/tasks/install.yml`.
 - The python OpenStack client had been installed into a created virtual environment.
   Also, your application credential is placed on the *vm01*.
-  Take a lock into it `~/.os_creds.sh`.
+  Take a look into it `~/.os_creds.sh`.
 - Your `PATH` environment variable points to the virtual python environment.
-  Take a lock:
+  Take a look:
   ```
   echo $PATH
   ```
@@ -71,6 +73,7 @@ Edit the *roles* or add new ones. Customize your instance with Ansible.
 
 - `./inventories/hosts.ini`: Mange the *groups* of your VMs.
 - `./inventories/host_vars/vm01`: The most atomic information/ *variables* about your VM.
+   The directory `./inventories/host_vars/vm01` matches to the host `vm01` in the `./inventories/hosts.ini` file.
 - `./inventories/group_vars/bwCloud`: The variable, grouped by *roles*, controlling the customization of the bwCloud VMs.
 - `./roles`: The actions, grouped by *roles*, customizing your bwCloud VMs.
 - `./playbooks`: The (ordered) collection of the *roles*.
